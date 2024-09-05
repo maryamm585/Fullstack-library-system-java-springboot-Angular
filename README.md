@@ -21,7 +21,8 @@ The `Backend` branch includes the server-side application built with Spring Boot
 - Java
 - Spring Boot
 - Hibernate (JPA)
-- MySQL (or any relational database)
+- MySQL
+- Mongo database
 - RESTful Web Services
 - Maven
 
