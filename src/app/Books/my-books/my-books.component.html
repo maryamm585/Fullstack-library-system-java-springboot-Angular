@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+    <title>Booklist</title>
+    </head>
+
+    <body>
+
+
+        <nav>
+            <ul>
+                <li><a routerLink="/">Home</a></li>
+                <li *ngIf="isLoggedIn && isUser"><a routerLink="/booklist">Booklist</a></li>
+                <li *ngIf="isLoggedIn && isUser"><a routerLink="/my-books">My Books</a></li>
+            </ul>
+        </nav>
+
+
+<div *ngIf="borrowedBooks.length > 0; else noBooks">
+    <h3>My Borrowed Books</h3>
+    <div *ngFor="let book of borrowedBooks">
+        <div class="book">
+            <div class="title">
+                <h3>{{ book.title }}</h3>
+            </div>
+            <div class="text">
+                <p>{{ book.author }}</p>
+                <p>{{ book.genre }}</p>
+                <p>{{ book.transactionDate }}</p>
+            </div>
+            <button type="return" (click)="returnBook(book.bookId)">Return</button>
+        </div>
+    </div>
+</div > 
+
+
+ <ng-template #noBooks>
+    <br><br>
+    <div class="no-results-message">
+  <h3>No borrowed books.</h3>
+</div>
+  <br><br><br><br><br><br><br>
+</ng-template>
+
+</body>
+</html>

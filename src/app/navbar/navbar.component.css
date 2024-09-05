@@ -1,0 +1,27 @@
+nav ul {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    list-style: none; 
+    padding: 0; 
+    margin: 0; 
+    height: 1cm;
+    background-color: rgb(31, 29, 66);
+}
+
+
+nav a {
+    color: #e7e6ec;
+    text-decoration: none;
+
+    height:10cm;
+    padding: 10px 20px; 
+    transition: 0.5s;
+    font-size: 115%;
+}
+
+nav a:hover {
+    font-weight: bold;
+    background-color: rgb(79, 88, 114);
+    color: white;
+}

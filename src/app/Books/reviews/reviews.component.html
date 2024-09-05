@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <nav>
+            <ul>
+                <li><a routerLink="/">Home</a></li>
+                <li><a routerLink="/booklist">Booklist</a></li>
+            </ul>
+        </nav>
+<div>
+    <h3>Reviews for Book {{ bookId }}</h3>
+    <ol>
+      <li *ngFor="let review of reviews">
+        <div class="review">
+        <div class="text">
+        <p><strong>Rating:</strong> {{ review.rating }}</p>
+        <p><strong>Review:</strong> {{ review.reviewText }}</p>
+        <p><strong>Date:</strong> {{ review.reviewDate | date }}</p>
+        </div>
+        
+        <button type="update" *ngIf="canUpdateReview(review) && isUser" (click)="openUpdateDialog(review)">Update</button>
+        <button type="delete" *ngIf=" isAdmin" (click)="deleteReview(review.id)">Delete</button>
+  
+      </div>    
+      </li>
+    </ol>
+  </div>
+
+</body>
+</html>

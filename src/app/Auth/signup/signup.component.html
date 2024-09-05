@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Sign Up</title>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a routerLink="/">Home</a></li>
+        <li><a routerLink="/login">Login</a></li>
+        </ul>
+    </nav>
+
+
+    
+    <div class="signup-container">
+      <div class="sign-up">
+      <h2>Sign Up</h2>
+    </div>
+      <form #signupForm="ngForm" (ngSubmit)="onSubmit(signupForm)">
+        <div>
+          <label for="username">Username:</label>
+          <input
+            id="username"
+            name="username"
+            type="text"
+            [(ngModel)]="username"
+            required
+            autocomplete="username"
+          />
+          <div *ngIf="signupForm.submitted && !username">
+            Username is required.
+          </div>
+        </div>
+
+        <div>
+          <label for="password">Password:</label>
+          <input
+            id="password"
+            name="password"
+            [(ngModel)]="password"
+            type="password"
+            required
+            autocomplete="current-password"
+          />
+
+          <div *ngIf="signupForm.submitted && !password">
+            Password is required.
+          </div>
+        </div>
+
+        <button type="submit" [disabled]="!signupForm.valid">Register</button>
+
+        
+        <div *ngIf="errorMessage" class="error-message">
+          {{ errorMessage }}
+        </div>
+        <div *ngIf="successMessage" class="success-message">
+          {{ successMessage }}
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

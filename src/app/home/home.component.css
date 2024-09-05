@@ -1,0 +1,19 @@
+body{
+    background-image: url('../images/trial1.jpg');
+   height: 98.5vh;
+    width: 96.5vw;
+   background-repeat: no-repeat;
+   background-size: 100vw auto;
+   background-position: center;
+   background-size: cover;
+   background-color: rgb(170, 184, 224);
+   overflow: hidden;
+}
+
+.start p {
+    font-size: 27px;
+    color:  rgb(31, 29, 66);
+    margin-left: 20px;
+    margin-top: 200px;
+    color: var(--color2);
+  }

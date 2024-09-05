@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+    <title>userlist</title>
+    </head>
+<body>
+
+    <nav>
+    <ul>
+        <li><a routerLink="/">Home</a></li>
+        <li *ngIf="isLoggedIn"><a routerLink="/booklist">Booklist</a></li>
+        <li *ngIf="isLoggedIn"><a (click)="logout()">Logout</a></li>
+        <div class="search-bar">
+        <input type="searchbar" [formControl]="searchControl" placeholder="Search by username" />
+      </div>
+    </ul>
+</nav>
+  
+<h1>  Users </h1>
+
+<table>
+    <thead>
+      <tr>
+        <th class="id">ID</th>
+        <th class="name">Username</th>
+        <th >Password</th>
+        <th class="role">Role</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.id }}</td>
+        <td  >{{ user.username }}</td>
+        <td class="password">{{ user.password }}</td>
+        <td>{{ user.roles }}</td> 
+        <td>
+            <button type="delete" (click)="deleteUser(user.id)">Delete</button>
+            <button  type="assignrole"  (click)="toggleDropdown(user.id)">Assign Role</button>
+    
+          <div class="roleassign" *ngIf="user.showDropdown">
+            <button type="assignroled" (click)="assignRole(user.id, 'Admin')">Admin</button>
+            <button type="assignroled" (click)="assignRole(user.id, 'User')">User</button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</body>

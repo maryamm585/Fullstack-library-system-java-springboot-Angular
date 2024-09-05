@@ -1,0 +1,109 @@
+nav ul {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    list-style: none; 
+    padding: 0; 
+    margin: 0; 
+    height: 1cm;
+    background-color: rgb(31, 29, 66);
+}
+
+
+
+nav a {
+    color: #e7e6ec;
+    height:10cm;
+    text-decoration: none;
+    padding: 10px 20px; 
+    transition: 0.5s;
+    font-size: 115%;
+}
+
+nav a:hover {
+    font-weight: bold;
+    background-color: rgb(79, 88, 114);
+    color: white;
+}
+
+
+
+body{
+    background-image: url('../../images/trial1.jpg');
+ height: 98.5vh;
+  width: 96.5vw;
+ background-repeat: no-repeat;
+ background-size: 100vw auto;
+ background-position: center;
+ background-size: cover;
+ background-color: rgb(170, 184, 224);
+ overflow: hidden;
+
+}
+
+.add-review-form{
+  border: 2px solid rgb(31, 29, 66);
+  border-radius: 28px;
+  margin-left: 80px;
+  margin-top: 60px;
+  width: 350px;
+  background-color: rgba(255, 255, 255, 0);
+  box-shadow: 0px 0px 10px rgb(31, 29, 66);
+  height: 250px;
+}
+
+
+.addReview {
+    color: rgb(31, 29, 66);
+    margin-top: 100px;
+    margin-left: 140px;
+    margin-bottom: 30px;
+    
+  }
+
+  label {
+    display: block;
+    margin-left: 25px;
+    color: rgb(31, 29, 66);
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  textarea {
+    border: 2px solid  rgb(31, 29, 66);
+    border-radius: 28px;
+    margin-left: 25px;
+    padding: 8px;
+    box-sizing: border-box;
+    width: 300px;
+  }
+
+  input[type="number"] {
+    border: 2px solid  rgb(31, 29, 66);
+    border-radius: 28px;
+    margin-left: 25px;
+    padding: 8px;
+    box-sizing: border-box;
+    width: 300px;
+  }  
+
+  button[type="add"] {
+    margin-top: 20px;
+    border: 2px solid rgb(31, 29, 66);
+    border-radius: 28px;
+    padding: 8px;
+    font-size: 15px;
+    background-color: rgb(31, 29, 66);;
+    color: rgb(255, 255, 255);
+    display: block;
+    height: 50px;
+    width: 170px;
+    margin-left: 125px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+  }
+  
+  button[type="add"]:hover {
+    transform: scale(1.1);
+  }

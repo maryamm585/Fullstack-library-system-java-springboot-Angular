@@ -1,0 +1,137 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #e7e6ec;
+  display: flex;
+  flex-direction: column;
+}
+
+nav {
+  width: 100%;
+  background-color: rgb(31, 29, 66);
+}
+
+nav ul {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  height: 1cm;
+}
+
+nav a {
+  color: #e7e6ec;
+  text-decoration: none;
+  padding: 10px 20px;
+  transition: 0.5s;
+  font-size: 115%;
+}
+
+nav a:hover {
+  font-weight: bold;
+  background-color: rgb(79, 88, 114);
+  color: #e7e6ec;
+}
+
+
+.search-bar {
+  border: 2px solid var(--color2);
+  border-radius: 28px;
+  padding: 10px;
+  margin-right: 1cm;
+  background-color: #e7e6ec;
+  color: rgb(31, 29, 66);
+  outline: none;
+}
+
+h1 {
+  font-size: 150%;
+  margin: 20px 0 0.5cm;
+  color: rgb(31, 29, 66);
+  text-align: center;
+  font-weight: 650;
+}
+
+table {
+  width: 100%;
+  max-width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #e7e6ec;
+}
+
+th {
+  color: #e7e6ec;
+}
+
+td {
+  color: rgb(31, 29, 66);
+}
+
+th,
+td {
+  padding: 20px 20px;
+  text-align: center;
+
+  font-size: large;
+  font-weight: 650;
+}
+
+thead {
+  background-color: rgb(31, 29, 66);
+  color: #e7e6ec;
+  height: 30px;
+}
+
+body > table {
+  flex-grow: 1;
+}
+
+button[type="delete"] {
+  border: 10px solid rgb(31, 29, 66);
+  border-radius: 23px;
+  font-size: 17px;
+  background-color: rgb(31, 29, 66);
+  color: rgb(255, 255, 255);
+  transition: transform 0.3s ease;
+  margin-left: 5px;
+}
+
+button[type="delete"]:hover {
+  transform: scale(1.1);
+}
+
+button[type="assignrole"] {
+    border: 10px solid rgb(31, 29, 66);
+    border-radius: 23px;
+    font-size: 17px;
+    background-color: rgb(31, 29, 66);
+    color: rgb(255, 255, 255);
+    transition: transform 0.3s ease;
+    margin-left: 5px;
+  }
+  
+  button[type="assignrole"]:hover {
+    transform: scale(1.1);
+  }
+
+
+  button[type="assignroled"] {
+    border: 10px solid rgb(31, 29, 66);
+    border-radius: 17px;
+    font-size: 17px;
+    background-color: rgb(31, 29, 66);
+    color: rgb(255, 255, 255);
+    transition: transform 0.3s ease;
+    margin-left: 20px;
+    margin-top: 10px;
+  }
+  
+  button[type="assignroled"]:hover {
+    transform: scale(1.1);
+  }
+

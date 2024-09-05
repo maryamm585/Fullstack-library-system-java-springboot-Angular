@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Review</title>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a routerLink="/">Home</a></li>
+            <li><a routerLink="/booklist">Booklist</a></li>
+        </ul>
+    </nav>
+
+
+    <div class="addbook-container">
+        <div class="addReview">
+            <h2>Add Review for Book {{ bookId }}</h2>
+        </div>
+
+        <form #addreviewForm="ngForm" (ngSubmit)="addReview()"  class="add-review-form">
+            <div>
+                <label for="rating">Rating:</label>
+                <input id="rating" type="number" [(ngModel)]="review.rating" name="rating" required>
+                <div *ngIf="addreviewForm.submitted && !review.rating">
+                    Rating is required.
+                </div>
+            </div>
+            
+            <div>
+                <label for="reviewText">Review:</label>
+                <textarea id="reviewText" type="text" [(ngModel)]="review.reviewText" name="reviewText" required></textarea>
+                <div *ngIf="addreviewForm.submitted && !review.reviewText">
+                    Review text is required.
+                </div>
+            </div>
+
+            <button type="add" [disabled]="!addreviewForm.valid">Add Review</button>
+        </form>
+
+        <div *ngIf="errorMessage" class="error-message">
+            {{ errorMessage }}
+        </div>
+        <div *ngIf="successMessage" class="success-message">
+            {{ successMessage }}
+        </div>
+    </div>
+</body>
+</html>

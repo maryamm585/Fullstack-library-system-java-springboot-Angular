@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+    <title>Booklist</title>
+    </head>
+<body>
+<div class="booklist-container">
+
+    <nav>
+    <ul>
+        <li><a routerLink="/">Home</a></li>
+        <li *ngIf="isLoggedIn && isUser"><a routerLink="/booklist">Booklist</a></li>
+        <li *ngIf="isLoggedIn && isUser"><a routerLink="/my-books">My Books</a></li>
+        <li *ngIf="isLoggedIn && isAdmin"><a routerLink="/users">Users</a></li>
+        <li *ngIf="isLoggedIn"><a (click)="logout()">Logout</a></li>
+        <div class="search-bar">
+            <input
+            type="text"
+            [formControl]="searchControl"
+            placeholder="Search by title or author"
+        />
+        </div>
+    </ul>
+</nav>
+
+<button type="Addbook" *ngIf="isLoggedIn && isAdmin" (click)="navigateToAddBook()">Add Book</button>
+
+<div *ngIf="noResultsFound" class="no-results-message">
+    <h3>Book not found</h3>
+  </div>
+
+
+
+  <div *ngIf="!noResultsFound && books.length > 0">
+    <h3>Booklist</h3>
+    <ol>
+      <li *ngFor="let book of books">
+        <div class="book">
+        <div class="title">
+        <h4>{{ book.title }}</h4>
+        </div>
+        <div class="text">
+        <p><strong>Author:</strong> {{ book.author }}</p>
+        <p><strong>Genre:</strong> {{ book.genre }}</p>
+        <p><strong>Description:</strong> {{ book.description }}</p>
+        <p><strong>Copies Available:</strong> {{ book.copiesAvailable }}</p>
+        <p><strong>Publisher:</strong> {{ book.publisher }}</p>
+        <p><strong>Published Date:</strong> {{ book.publishedDate | date }}</p>
+        </div>
+        <button type="borrow" *ngIf="isLoggedIn && isUser" (click)="borrowBook(book.id)">Borrow</button>
+        <button type="reviews"  (click)="viewReviews(book.id)">All Reviews</button>
+        <button type="addreviews"  *ngIf="isLoggedIn && isUser" (click)="navigateToAddReview(book.id)">Add Review</button>
+        <button type="delete" *ngIf="isLoggedIn && isAdmin" (click)="deleteBook(book.id)">Delete</button>
+    </div>
+      </li>
+    </ol>
+    
+  </div>
+</div>
+
+
+<div *ngIf="!noResultsFound && books.length === 0" >
+  <div class="no-results-message">
+    <h3>No books found.</h3>
+  </div>
+  <br><br><br><br><br><br><br><br><br>
+  </div>   
+</body>
+</html>

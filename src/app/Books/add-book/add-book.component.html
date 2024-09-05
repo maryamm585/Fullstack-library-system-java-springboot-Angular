@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Add Book</title>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a routerLink="/">Home</a></li>
+      <li><a routerLink="/booklist">Booklist</a></li>
+    </ul>
+  </nav>
+
+  <div class="add-book-container">
+    <div class="add-book">
+      <h2>Add Book</h2>
+    </div>
+    <form #bookForm="ngForm" (ngSubmit)="onSubmit()" class="addbook-form">
+      <div>
+        <label for="title">Title:</label>
+        <input
+          type="text"
+          id="title"
+          name="title"
+          [(ngModel)]="book.title"
+          required
+          autocomplete="off"
+        />
+        <div *ngIf="bookForm.submitted && !book.title">
+          Title is required.
+        </div>
+      </div>
+
+      <div>
+        <label for="author">Author:</label>
+        <input
+          type="text"
+          id="author"
+          name="author"
+          [(ngModel)]="book.author"
+          required
+          autocomplete="off"
+        />
+        <div *ngIf="bookForm.submitted && !book.author">
+          Author is required.
+        </div>
+      </div>
+
+      <div>
+        <label for="genre">Genre:</label>
+        <input
+          type="text"
+          id="genre"
+          name="genre"
+          [(ngModel)]="book.genre"
+          required
+          autocomplete="off"
+        />
+        <div *ngIf="bookForm.submitted && !book.genre">
+          Genre is required.
+        </div>
+      </div>
+
+      <div>
+        <label for="isbn">ISBN:</label>
+        <input
+          type="text"
+          id="isbn"
+          name="isbn"
+          [(ngModel)]="book.isbn"
+          required
+          autocomplete="off"
+        />
+        <div *ngIf="bookForm.submitted && !book.isbn">
+          ISBN is required.
+        </div>
+      </div>
+
+      <div>
+        <label for="publisher">Publisher:</label>
+        <input
+          type="text"
+          id="publisher"
+          name="publisher"
+          [(ngModel)]="book.publisher"
+          required
+          autocomplete="off"
+        />
+        <div *ngIf="bookForm.submitted && !book.publisher">
+          Publisher is required.
+        </div>
+      </div>
+
+      <div>
+        <label for="publishedDate">Published Date:</label>
+        <input
+          type="date"
+          id="publishedDate"
+          name="publishedDate"
+          [(ngModel)]="book.publishedDate"
+          required
+        />
+        <div *ngIf="bookForm.submitted && !book.publishedDate">
+          Published Date is required.
+        </div>
+      </div>
+
+      <div class="description-container">
+        <label for="description">Description:</label>
+        <textarea
+          id="description"
+          name="description"
+          [(ngModel)]="book.description"
+          required
+        ></textarea>
+        <div *ngIf="bookForm.submitted && !book.description">
+          Description is required.
+        </div>
+      </div>
+
+      <div>
+        <label for="copiesAvailable">Copies Available:</label>
+        <input
+          type="number"
+          id="copiesAvailable"
+          name="copiesAvailable"
+          [(ngModel)]="book.copiesAvailable"
+          required
+          autocomplete="off"
+        />
+        <div *ngIf="bookForm.submitted && !book.copiesAvailable">
+          Copies Available is required.
+        </div>
+      </div>
+
+      <button type="submit" [disabled]="!bookForm.valid">Add Book</button>
+
+      <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+      </div>
+      <div *ngIf="successMessage" class="success-message">
+        {{ successMessage }}
+      </div>
+    </form>
+  </div>
+</body>
+</html>

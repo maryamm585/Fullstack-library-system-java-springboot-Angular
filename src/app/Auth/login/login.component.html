@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Login</title>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a routerLink="/">Home</a></li>
+        <li><a routerLink="/signup">Sign Up</a></li>
+      </ul>
+    </nav>
+
+    <div class="login-container">
+        <div class="login">
+      <h2>Login</h2>
+    </div>
+      <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+        <div>
+          <label for="username">Username:</label>
+          <input
+            id="username"
+            name="username"
+            type="text"
+            [(ngModel)]="username"
+            required
+            autocomplete="username"
+          />
+          <div *ngIf="loginForm.submitted && !username">
+            Username is required.
+          </div>
+        </div>
+
+        <div>
+          <label for="password">Password:</label>
+          <input
+            id="password"
+            name="password"
+            type="password"
+            [(ngModel)]="password"
+            required
+            autocomplete="current-password"
+          />
+          <div *ngIf="loginForm.submitted && !password">
+            Password is required.
+          </div>
+        </div>
+
+        <button type="submit" [disabled]="!loginForm.valid">Login</button>
+
+        <div *ngIf="errorMessage" class="error-message">
+          {{ errorMessage }}
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
