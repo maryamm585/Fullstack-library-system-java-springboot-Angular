@@ -53,4 +53,4 @@ The `Frontend` branch includes the client-side application built with Angular. T
 - Angular
 - TypeScript
 - HTML/CSS
-- Angular Services and Components
+- Angular Modules,Services and Components
