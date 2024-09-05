@@ -13,6 +13,7 @@ The `Backend` branch includes the server-side application built with Spring Boot
 
 #### Key Features:
 - User authentication and authorization.
+- User managment (CRUD operations).
 - Book management (CRUD operations).
 - Borrow and return functionality.
 - Review and rating system.
